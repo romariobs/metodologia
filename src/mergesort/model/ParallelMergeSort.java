@@ -2,10 +2,18 @@ package mergesort.model;
 
 import java.util.Arrays;
 
+/**
+ * Parallel mergesort.
+ */
 public class ParallelMergeSort extends MergeSort {
 
 	public int numberOfThreads;
 
+	/**
+	 * Constructs a parallel mergesort.
+	 * @param unsortedArray The unsorted array.
+	 * @param threads Number of threads.
+     */
 	public ParallelMergeSort(String[] unsortedArray, int threads) {
 		super(unsortedArray);
 		numberOfThreads = threads;

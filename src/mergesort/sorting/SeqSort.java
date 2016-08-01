@@ -4,17 +4,13 @@ import mergesort.model.SequentialMergeSort;
 import mergesort.util.StringUtil;
 
 /**
- * Class controller sequential mergesort.
+ * Class main sequential mergesort.
  */
 public class SeqSort {
 	public static void main(String[] args) {		//sequential
-		String[] randomArrayForSeq = {"Teste1", "Teste7", "Teste5", "Teste2"};
-		SequentialMergeSort sms = new SequentialMergeSort(randomArrayForSeq);
+		SequentialMergeSort sms = new SequentialMergeSort(args);
 		sms.sortArray();
-		StringUtil.printArray(sms);
-
-		System.out.println(" Sequential Finished");
-
+		StringUtil.printArray(sms.getSortingArray());
 
 	}
 

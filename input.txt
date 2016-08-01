@@ -1,0 +1,9 @@
+xadrez
+torre
+dama
+alicate
+rainha
+bola
+futebol
+cobra
+bicicleta

@@ -2,15 +2,28 @@ package mergesort.model;
 
 import java.util.Arrays;
 
-public class MergeSort {
+/**
+ * Abstract class used by parallel and sequential mergesort.
+ */
+public abstract class MergeSort {
 
 	protected String[] sortingArray;
 
+	/**
+	 * Construct a mergesort.
+	 * @param unsortedArray Unsorted array.
+     */
 	public MergeSort(String[] unsortedArray) {
 		super();
 		this.sortingArray = unsortedArray;
 	}
 
+	/**
+	 * Merges two array;
+	 * @param leftArray  First half.
+	 * @param rightArray Second half.
+	 * @param sortedArray Array that will be stored.
+     */
 	public void merge(String[] leftArray, String[] rightArray, String[] sortedArray) {
 		int counter1 = 0;
 		int counter2 = 0;
@@ -26,8 +39,12 @@ public class MergeSort {
 		}
 
 	}
-	
-	// It is O(N log N) for all inputs.
+
+	/**
+	 * Mergesort algorithm.
+	 * It is O(N log N) for all inputs.
+	 * @param a The array.
+     */
 	public void mergeSort(String[] a) {
 		if (a.length >= 2) {
 
@@ -42,10 +59,12 @@ public class MergeSort {
 		}
 	}
 
-	public void sortArray() {
-		
-	}
+	public abstract void sortArray();
 
+	/**
+	 * Returns the sorting array.
+	 * @return the sorting array.
+     */
 	public String[] getSortingArray() {
 		return sortingArray;
 	}

@@ -23,6 +23,6 @@ case $ALGORITHM in
 		java -cp out/ -Xmx2048m mergesort/sorting/ParSort $stdinArray;;
 	"seqSort")
 		java -cp out/ -Xmx2048m mergesort/sorting/SeqSort $stdinArray;;
-	*) echo "Digite um algoritmo valido. Escolha entre parSort e seqSort." ;;
+	*) echo "Algoritmo inválido. Escolha entre parSort e seqSort." ;;
 esac
 

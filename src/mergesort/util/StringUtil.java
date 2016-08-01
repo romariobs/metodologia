@@ -1,12 +1,16 @@
 package mergesort.util;
 
-
-import mergesort.model.MergeSort;
-
+/**
+ * String utils.
+ */
 public class StringUtil {
 
-    public static void printArray(MergeSort elements) {
-        for (String s: elements.getSortingArray()) {
+    /**
+     * Print by line the string ordered.
+     * @param elements The array to be printed.
+     */
+    public static void printArray(String[] elements) {
+        for (String s: elements) {
             System.out.println(s);
         }
     }
