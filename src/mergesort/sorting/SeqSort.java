@@ -7,18 +7,18 @@ public class SeqSort {
 	static int LENGTH = 1000;
 	static int RUNS = 16;
 	public static void main(String[] args) {
-		for (int i = 1; i <= RUNS; i++) {
-			//sequential 
-			String[] randomArrayForSeq = {"Teste1", "Teste3", "Teste5", "Teste2"};
+		for (int i = 1; i <= RUNS; i++) {			//sequential
+			String[] randomArrayForSeq = {"Teste1", "Teste7", "Teste5", "Teste2"};
 			long startTimeSeq = System.currentTimeMillis();
 			SequentialMergeSort sms = new SequentialMergeSort(randomArrayForSeq);
 			sms.sortArray();
 			long endTimeSeq = System.currentTimeMillis();
 		//	 System.out.println(Arrays.toString(randomArrayForSeq));
-			System.out.println("sorting array: "+sms.getSortingArray());
-			
-			
-			
+
+
+			for (String s: sms.getSortingArray()) {
+				System.out.println("sorting array: "+s);
+			}
 			System.out.println(LENGTH + " elements");
 			System.out.printf("=>  %6d ms \n", endTimeSeq - startTimeSeq);
 			LENGTH *= 2; // double size of array for next time
