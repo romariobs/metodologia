@@ -1,5 +1,8 @@
 package mergesort.sorting;
 
+import mergesort.model.ParallelMergeSort;
+import mergesort.util.StringUtil;
+import java.util.Arrays;
 /**
  * Class main parallel mergesort.
  */
@@ -10,27 +13,9 @@ public class ParSort {
 
 	public static void main(String[] args) throws Throwable {
         // int cores = Runtime.getRuntime().availableProcessors();
-
-
-
-
-        switch (args.length) {
-            case 0:
-                break;
-            case 1:
-                mInputPath = args[0];
-                break;
-            case 2:
-                mInputPath = args[0];
-                mOutputPath = args[1];
-                break;
-            default:
-                throw new RuntimeException("Quantidade de argumentos invalida");
-        }
-
-        System.out.println("RODOUUUUUUU GG");
-
-        System.out.println("Parallel Finished");
+        ParallelMergeSort pms = new ParallelMergeSort(args,5);
+        pms.sortArray();
+        StringUtil.printArray(pms);
     }
 
 

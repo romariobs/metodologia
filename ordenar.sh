@@ -1,19 +1,15 @@
 #! /bin/bash
-clear
 
+stdinArray="$(cat <&0)"
 # --- Build
-echo "Compilando arquivos"
+mkdir ./out &> /dev/null
 javac -d ./out ./src/*/*/*.java
 
 
 ALGORITHM=$1
-INPUTFILE=$2
-OUTPUTFILE=$3
 
 PAR="parSort"
 SEQ="seqSort"
-
-echo $ALGORITHM
 
 if [ -z $ALGORITHM ] 
 then
@@ -23,12 +19,10 @@ fi
 
 case $ALGORITHM in
 	"parSort")
-		echo "Opção escolhida foi o MergeSort Paralelo" ;
 		# out/ is the binaries folder.
-		java -cp out/ -Xmx2048m mergesort/sorting/ParSort ;;
+		java -cp out/ -Xmx2048m mergesort/sorting/ParSort $stdinArray;;
 	"seqSort")
-		echo "Opção escolhida foi o MergeSort Sequencial" ;
-		java -cp out/ -Xmx2048m mergesort/sorting/SeqSort ;;
+		java -cp out/ -Xmx2048m mergesort/sorting/SeqSort $stdinArray;;
 	*) echo "Digite um algoritmo valido. Escolha entre parSort e seqSort." ;;
 esac
 
