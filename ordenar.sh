@@ -1,9 +1,6 @@
 #! /bin/bash
 clear
 
-# --- Clean
-#rm -rf ./bin/*
-
 # --- Build
 echo "Compilando arquivos"
 javac -d ./out ./src/*/*/*.java
@@ -27,10 +24,11 @@ fi
 case $ALGORITHM in
 	"parSort")
 		echo "Opção escolhida foi o MergeSort Paralelo" ;
-		java -cp out/ -Xmx2048m mergesort/sorting/ParSort $INPUTFILE $OUTPUTFILE ;;
+		# out/ is the binaries folder.
+		java -cp out/ -Xmx2048m mergesort/sorting/ParSort ;;
 	"seqSort")
 		echo "Opção escolhida foi o MergeSort Sequencial" ;
-		java -cp out/ -Xmx2048m mergesort/sorting/SeqSort $INPUTFILE $OUTPUTFILE ;;
+		java -cp out/ -Xmx2048m mergesort/sorting/SeqSort ;;
 	*) echo "Digite um algoritmo valido. Escolha entre parSort e seqSort." ;;
 esac
 

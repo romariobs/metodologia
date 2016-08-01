@@ -5,6 +5,9 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
+/**
+ * This class menager the input
+ */
 public class InputController {
     private String mPath = "";
     private final String mSeparator = System.getProperty("line.separator");

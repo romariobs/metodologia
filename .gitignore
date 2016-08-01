@@ -1,4 +1,5 @@
 /.classpath
+out/*
 /.project
-/.idead
+.idea/*
 *.iml
